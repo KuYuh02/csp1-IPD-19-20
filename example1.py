@@ -22,4 +22,9 @@ def move(my_history, their_history, my_score, their_score):
     '''
     
     #This example player always betrays.      
-    return 'b'
+    if len(my_history)==0: # It's the first round; betray.
+        return 'b'
+    elif my_history[-1]=='c' and their_history[-1]=='b':
+        return 'b' # Betray if they were severely punished last time,
+    else:
+        return 'b' # otherwise betray.
