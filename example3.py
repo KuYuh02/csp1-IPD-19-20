@@ -7,7 +7,7 @@
 ####
 
 team_name = 'E3'
-strategy_name = 'Collude but retaliate'
+strategy_name = 'Collude'
 strategy_description = '''\
 Always colude'''
     
