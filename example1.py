@@ -7,8 +7,8 @@
 ####
 
 team_name = 'E1'
-strategy_name = 'Betray'
-strategy_description = 'Always betray.'
+strategy_name = 'Betray then Collude'
+strategy_description = 'We will betray for the first round. After that, if the other team betrays us when we collude, then the next round we will betray them back. But if they collude with us then we will collude with them as well.'
     
 def move(my_history, their_history, my_score, their_score):
     '''Make my move based on the history with this player.
@@ -27,4 +27,4 @@ def move(my_history, their_history, my_score, their_score):
     elif my_history[-1]=='c' and their_history[-1]=='b':
         return 'b' # Betray if they were severely punished last time,
     else:
-        return 'b' # otherwise betray. Betraying every turn is good because there is no possiblilty the enemy team can get more points. It is the most consistent and we although we lose points, we lose less than the other team which wins the game for us.
+        return 'c' #collude if they collude
