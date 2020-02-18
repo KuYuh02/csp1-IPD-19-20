@@ -7,9 +7,9 @@
 ####
 
 team_name = 'E3'
-strategy_name = 'Collude'
+strategy_name = 'Betray until Colluded'
 strategy_description = '''\
-Always colude'''
+Betray first round. Betray, unless colluded; then always collude.'''
     
 def move(my_history, their_history, my_score, their_score):
     '''Make my move based on the history with this player.
@@ -21,9 +21,7 @@ def move(my_history, their_history, my_score, their_score):
     
     Returns 'c' or 'b' for collude or betray.
     '''
-    if len(my_history)==0: # It's the first round; collude.
+    if 'c' in their_history:
         return 'c'
-    elif my_history[-1]=='c' and their_history[-1]=='b':
-        return 'c' # Betray if they were severely punished last time,
     else:
-        return 'c' # otherwise collude.
+        return 'b'
